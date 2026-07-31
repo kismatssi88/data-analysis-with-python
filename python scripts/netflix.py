@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 #Loading the datase
 df=pd.read_csv(r'C:\Users\Dell\Desktop\data analysis\datasets\netflix.csv',encoding='latin1')
+df.to_excel(r'C:\Users\Dell\Desktop\data analysis\datasets\netflix.xlsx',index=False)
 print(df.head(5))
 print(df.tail(5))
 print(df.shape)
@@ -21,13 +22,20 @@ print(df.isnull().sum())
 #descriptive statistics
 print(df.describe())
 
-#activity bar graph
-import matplotlib.pyplot as plt
-acitivity=df['Active'].value_counts()
-plt.figure()
-plt.bar(acitivity.index,acitivity.values,colors=['red','blue'])
-plt.title('show active or ended??')
-plt.xlabel("ended or active")
-plt.ylabel('counts')
-plt.savefig("activity.png")
+#show status bar graph
+status_count = df["Status"].value_counts()
+plt.bar(status_count.index, status_count.values)
+plt.title("Activity Status")
+plt.xlabel("Activity")
+plt.ylabel("Count")
+plt.savefig('activity status')
+plt.show()
+
+
+#language bar graph 
+language_count=df['Language'].value_counts()
+plt.figure(figsize=(15,20))
+plt.bar(language_count.index,language_count.values)
+plt.title("language counts")
+plt.savefig("language bar graph")
 plt.show()
