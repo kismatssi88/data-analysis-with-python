@@ -47,3 +47,10 @@ plt.pie(table_counts,labels=table_counts.index,autopct='%1.1f%%')
 plt.title("Table comparision by percentage")
 plt.savefig('images/TABLE piechart')
 plt.show()
+
+#seasonparsed
+plt.hist(df["SeasonParsed"], bins=5)
+plt.title("Distribution of Seasons")
+plt.xlabel("Number of Seasons")
+plt.ylabel("Count")
+plt.show()
