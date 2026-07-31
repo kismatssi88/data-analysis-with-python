@@ -28,7 +28,7 @@ plt.bar(status_count.index, status_count.values)
 plt.title("Activity Status")
 plt.xlabel("Activity")
 plt.ylabel("Count")
-plt.savefig('activity status')
+plt.savefig('images/activity status')
 plt.show()
 
 
@@ -37,5 +37,13 @@ language_count=df['Language'].value_counts()
 plt.figure(figsize=(15,20))
 plt.bar(language_count.index,language_count.values)
 plt.title("language counts")
-plt.savefig("language bar graph")
+plt.savefig("images/language bar graph")
+plt.show()
+
+
+#piechart of table
+table_counts=df['Table'].value_counts()
+plt.pie(table_counts,labels=table_counts.index,autopct='%1.1f%%')
+plt.title("Table comparision by percentage")
+plt.savefig('images/TABLE piechart')
 plt.show()
