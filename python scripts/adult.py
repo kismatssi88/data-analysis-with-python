@@ -38,13 +38,34 @@ print('Are there any duplicated data?',dup)
 #removing duplicated data  
 df=df.drop_duplicates()
 print(df.shape)
-#making a piechart  of workclass
-workclass_counts = df['workclass'].value_counts()
-plt.figure(figsize=(20, 12))
-plt.pie(workclass_counts, labels=workclass_counts.index, autopct='%1.1f%%')
-plt.title('Distribution of Workclass')
-plt.savefig('images/adult visualizations/workclass_distribution.png')
-plt.tight_layout()
-plt.show()
+
+#removing cloumns which give same things like educational-num,capital-loss,capital-gain
+df=df.drop(['educational-num','capital-gain','capital-loss'],axis=1)
+print(df.shape)
+
+#univariate analysis i.e .analysis of a single column
+
+#distrubution of age  column where we will find the descriptive statstics and make  a histogram
+df['age'].describe()
+df['age'].hist()
+plt.savefig(r'C:\Users\Dell\Desktop\data analysis\images\adult visualizations\adult age.png')
+
+#no. of person aged between 17 to 48 here we can use between()
+total=sum(df['age'].between(17,48))
+print(total)
+#bivarative analysis
+#replacing 
+
+#distrubution of workclass column
+df['workclass'].describe()
+df['age'].hist()
+plt.savefig(r'C:\Users\Dell\Desktop\data analysis\images\adult visualizations\adult workclass.png')
+
+#number of person doing bachelors & master
+total=sum(df['education'].between('Bachelors','Masters'))
+print(total)
+
+#workclass which get the highest salary
+
 
 
