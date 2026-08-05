@@ -53,8 +53,8 @@ plt.savefig(r'C:\Users\Dell\Desktop\data analysis\images\adult visualizations\ad
 #no. of person aged between 17 to 48 here we can use between()
 total=sum(df['age'].between(17,48))
 print(total)
-#bivarative analysis
-#replacing 
+
+
 
 #distrubution of workclass column
 df['workclass'].describe()
@@ -67,5 +67,7 @@ print(total)
 
 #workclass which get the highest salary
 
-
-
+values=df['income'].unique()
+print(values)
+count=df['income'].value_counts()
+print(count)
