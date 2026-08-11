@@ -5,6 +5,7 @@ This repository demonstrates practical data analysis using:
 - NumPy
 - Pandas
 - Matplotlib
+-seaborn
 
 Topics Covered
 
@@ -22,8 +23,7 @@ Datasets
 
 - Titanic
 - Netflix
-- Sales
-- Employee
+- adult
 
 Skills Demonstrated
 
